@@ -1,0 +1,6 @@
+rootProject.name = 'jobf'
+
+include 'finder'
+include 'finder:domain'
+include 'finder:infra'
+

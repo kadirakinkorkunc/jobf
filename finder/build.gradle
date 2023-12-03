@@ -1,0 +1,31 @@
+
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.1.5'
+}
+
+description = 'Finder API'
+jar.archiveBaseName.set('finder-api')
+
+group 'com.jobf.finder'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project('infra')
+}
+
+springBoot {
+    mainClass = 'com.jobf.finder.FinderApplication'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+build {
+    dependsOn 'domain:build', 'infra:build'
+}
+
