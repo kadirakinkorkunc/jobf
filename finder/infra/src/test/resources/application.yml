@@ -1,21 +1,21 @@
 spring:
   profiles:
-    active: development
+    active: test
   datasource:
-    url: jdbc:h2:file:/data/jobf
+    url: jdbc:h2:mem:/data/jobftest
     driverClassName: org.h2.Driver
     username: sa
     password: password
   jpa:
     spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
-      ddl-auto: update
+      ddl-auto: create-drop
   h2:
     console.enabled: true
 
 authentication:
   secret: testsecret
   accesskey:
-    expiresecond: 86400
+    expiresecond: 2
   refreshkey:
-    expiresecond: 432000
+    expiresecond: 2

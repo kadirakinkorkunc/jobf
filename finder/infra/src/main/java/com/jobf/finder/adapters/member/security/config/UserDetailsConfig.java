@@ -1,4 +1,4 @@
-package com.jobf.finder.adapters.member.security;
+package com.jobf.finder.adapters.member.security.config;
 
 
 import com.jobf.finder.common.usecase.UseCaseHandler;

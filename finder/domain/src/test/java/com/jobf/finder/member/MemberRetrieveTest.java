@@ -1,9 +1,8 @@
-package com.jobf.finder;
+package com.jobf.finder.member;
 
 
-import com.jobf.finder.adapters.FakeMemberPort;
+import com.jobf.finder.member.adapter.FakeMemberPort;
 import com.jobf.finder.common.exception.FinderAppDataNotFoundException;
-import com.jobf.finder.member.MemberRetrieveUseCaseHandler;
 import com.jobf.finder.member.model.Member;
 import com.jobf.finder.member.usecase.MemberRetrieve;
 import org.junit.jupiter.api.BeforeEach;

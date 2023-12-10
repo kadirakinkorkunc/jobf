@@ -1,4 +1,4 @@
-package com.jobf.finder.adapters;
+package com.jobf.finder.member.adapter;
 
 import com.jobf.finder.member.model.Authentication;
 import com.jobf.finder.member.model.AuthenticationDetail;

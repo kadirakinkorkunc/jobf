@@ -26,12 +26,18 @@ public class AuthDataAdapter implements AuthPort {
     @Value("${authentication.secret}")
     private String jwtSignAlgorithmSecret;
 
+    @Value("${authentication.accesskey.expiresecond}")
+    private Long accessKeyExpire;
+
+    @Value("${authentication.refreshkey.expiresecond}")
+    private Long refreshKeyExpire;
+
     @Override
     public Authentication login(MemberLogin memberLogin) {
         Instant now = Instant.now();
         String subject = memberLogin.getEmail();
-        String accessToken = createToken(subject, now, now.plus(1, ChronoUnit.DAYS));
-        String refreshToken = createToken(subject, now, now.plus(5, ChronoUnit.DAYS));
+        String accessToken = createToken(subject, now, now.plus(accessKeyExpire, ChronoUnit.SECONDS));
+        String refreshToken = createToken(subject, now, now.plus(refreshKeyExpire, ChronoUnit.SECONDS));
         return Authentication.builder().tokenType(TOKEN_TYPE).token(accessToken).refreshToken(refreshToken).build();
     }
 
@@ -42,10 +48,6 @@ public class AuthDataAdapter implements AuthPort {
                     .withIssuer(ISSUER)
                     .build()
                     .verify(memberAuthenticate.getAccessToken());
-
-            if(decodedJWT.getExpiresAtAsInstant().isBefore(Instant.now())) {
-                throw new JWTVerificationException("Token is expired");
-            }
 
             return AuthenticationDetail.builder().authenticated(true).subject(decodedJWT.getSubject()).build();
         } catch (JWTVerificationException verificationException) {

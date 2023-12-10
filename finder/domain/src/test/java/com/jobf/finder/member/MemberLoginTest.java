@@ -1,10 +1,9 @@
-package com.jobf.finder;
+package com.jobf.finder.member;
 
-import com.jobf.finder.adapters.FakeAuthPort;
-import com.jobf.finder.adapters.FakeMemberPort;
-import com.jobf.finder.adapters.FakeSecurityPort;
+import com.jobf.finder.member.adapter.FakeAuthPort;
+import com.jobf.finder.member.adapter.FakeMemberPort;
+import com.jobf.finder.member.adapter.FakeSecurityPort;
 import com.jobf.finder.common.exception.FinderAppDataNotFoundException;
-import com.jobf.finder.member.MemberLoginUseCaseHandler;
 import com.jobf.finder.member.model.Authentication;
 import com.jobf.finder.member.usecase.MemberLogin;
 import org.junit.jupiter.api.Assertions;

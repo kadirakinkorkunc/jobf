@@ -1,7 +1,6 @@
-package com.jobf.finder;
+package com.jobf.finder.member;
 
-import com.jobf.finder.adapters.FakeAuthPort;
-import com.jobf.finder.member.MemberAuthenticateUseCaseHandler;
+import com.jobf.finder.member.adapter.FakeAuthPort;
 import com.jobf.finder.member.usecase.MemberAuthenticate;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

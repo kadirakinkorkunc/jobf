@@ -1,9 +1,8 @@
-package com.jobf.finder;
+package com.jobf.finder.member;
 
 
-import com.jobf.finder.adapters.FakeMemberPort;
-import com.jobf.finder.adapters.FakeSecurityPort;
-import com.jobf.finder.member.MemberCreateUseCaseHandler;
+import com.jobf.finder.member.adapter.FakeMemberPort;
+import com.jobf.finder.member.adapter.FakeSecurityPort;
 import com.jobf.finder.member.model.Member;
 import com.jobf.finder.member.usecase.MemberCreate;
 import org.junit.jupiter.api.BeforeEach;
